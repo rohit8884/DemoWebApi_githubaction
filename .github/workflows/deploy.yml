@@ -3,7 +3,7 @@ name: Build and Deploy .NET API
 on:
   push:
     branches:
-      - main   # trigger on commit
+      - master   # trigger on commit
 
 env:
   AZURE_WEBAPP_NAME: webapi-githubaction
