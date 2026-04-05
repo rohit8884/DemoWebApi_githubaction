@@ -1,4 +1,4 @@
-    name: Build and Deploy .NET API
+name: Build and Deploy .NET API
 
 on:
   push:
