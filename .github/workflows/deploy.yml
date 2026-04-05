@@ -1,4 +1,4 @@
-name: Build and Deploy .NET API
+    name: Build and Deploy .NET API
 
 on:
   push:
@@ -32,10 +32,17 @@ jobs:
 
     - name: Publish
       run: dotnet publish -c Release -o publish
+      
+      # 🔐 6. Login to Azure using Service Principal
+    - name: Azure Login
+      uses: azure/login@v2
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-    - name: Deploy to Azure
+    - name: Deploy to Azure Web app
       uses: azure/webapps-deploy@v3
       with:
-        app-name: webapi-githubaction
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
         package: ./publish
