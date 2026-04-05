@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - master   # trigger on commit
+      
+# 🔐 ADD THIS
+permissions:
+  id-token: write
+  contents: read      
 
 env:
   AZURE_WEBAPP_NAME: webapi-githubaction
