@@ -44,7 +44,7 @@ jobs:
       - name: Deploy to DEV
         uses: azure/webapps-deploy@v3
         with:
-          app-name: webapi-dev
+          app-name: webapi-githubaction
           package: ./publish
 
 # 🔹 PROD DEPLOYMENT (WITH APPROVAL)
@@ -67,5 +67,5 @@ jobs:
       - name: Deploy to PROD
         uses: azure/webapps-deploy@v3
         with:
-          app-name: webapi-prod
+          app-name: webapi-githubaction-prod
           package: ./publish
