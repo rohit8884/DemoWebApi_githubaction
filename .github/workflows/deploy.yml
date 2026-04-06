@@ -68,6 +68,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: publish-artifact
+          path: ./publish
 
       - name: Azure Login (PROD)
         uses: azure/login@v2
