@@ -1,4 +1,4 @@
-name: Multi-Env Deployment
+name: Multi-Env DeploymentPipeline
 
 on:
   push:
